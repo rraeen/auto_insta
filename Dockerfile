@@ -1,22 +1,21 @@
+# Step 1: Build the React app
+FROM node:21 AS build-frontend
+WORKDIR /app
+COPY client/package*.json ./client/
+RUN cd client && npm install
+COPY client ./client
+RUN cd client && npm run build
 
-
-# 1. Base image
-FROM node:21-alpine
-
-# 2. Set working directory
+FROM node:21
 WORKDIR /app
 
-# 3. Copy both backend and client files
-COPY . .
-
-# 4. Install server dependencies
+COPY package*.json ./
 RUN npm install
 
-# 5. Build React app
-RUN npm install --prefix client && npm run build --prefix client
+COPY . .
 
-# 6. Serve React build via Express static (you already have it in your server.js)
+COPY --from=build-frontend /app/client/build ./client/build
+
 EXPOSE 5000
 
-# 7. Start backend server
 CMD ["node", "server.js"]
