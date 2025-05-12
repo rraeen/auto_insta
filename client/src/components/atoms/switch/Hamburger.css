@@ -1,0 +1,37 @@
+.hamburger {
+    cursor: pointer;
+    display:flex;
+    justify-content: center;
+    padding-right:5px;
+    margin-left: -10px;
+  }
+  
+  .hamburger input {
+    display: none;
+  }
+  
+  .hamburger svg {
+    height: 1.5em; 
+  }
+  
+  .line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+  }
+  
+  .line-top-bottom {
+    stroke-dasharray: 12 63; 
+  }
+  
+  .hamburger input:checked + svg {
+    transform: rotate(-45deg);
+  }
+  
+  .hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300; 
+    stroke-dashoffset: -32.42; 
+  }
+  

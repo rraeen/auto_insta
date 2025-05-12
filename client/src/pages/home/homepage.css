@@ -1,0 +1,41 @@
+/* Essential gradient styles */
+.gradient-text {
+    background: linear-gradient(to right, #ec4899, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+  
+  .gradient-button {
+    background: linear-gradient(to right, #ec4899, #3b82f6) !important;
+    border: none !important;
+    color: black !important;
+  }
+  
+  .gradient-button:hover {
+    background: linear-gradient(to right, #db2777, #2563eb) !important;
+  }
+  
+  /* Feature card hover effect */
+  .feature-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(236, 72, 153, 0.3);
+    box-shadow: 0 20px 25px -5px rgba(236, 72, 153, 0.1);
+  }
+  
+  /* Add responsive styles */
+  @media (max-width: 768px) {
+    .gradient-text {
+      font-size: 2.5rem !important;
+    }
+  }
+  
+  /* Add backdrop filter for browsers that support it */
+  @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .feature-card, header, footer {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  }
+  

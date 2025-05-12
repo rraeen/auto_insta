@@ -1,0 +1,217 @@
+/* GradientDarkForm.css */
+:root {
+    --gradient: linear-gradient(to right, #ec4899, #3b82f6);
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --input-bg: #2d2d2d;
+    --text-color: #e0e0e0;
+    --label-color: #a0a0a0;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+  }
+  
+  .form-container {
+    background-color: var(--card-bg);
+    /* max-width: 700px; */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+  }
+  
+  
+  
+  .form-section {
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .form-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--label-color);
+    font-size: 0.9rem;
+    transition: color var(--transition-speed);
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="date"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--input-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #3b82f6, 0 0 0 4px rgba(59, 130, 246, 0.2);
+  }
+  
+  .form-group:focus-within label {
+    color: #3b82f6;
+  }
+  
+  .address-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .address-grid .form-group:last-child {
+    grid-column: span 2;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    accent-color: #3b82f6;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+  
+  .checkbox-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+  
+  .gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .gradient-text::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+  }
+  
+  .gradient-text:hover::after {
+    
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .nav-text {
+    background: var(--label-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+  .nav-text:hover {
+    background:var(--gradient);;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+   
+  }
+  
+  .nav-text::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+  }
+  
+  .nav-text:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  :root {
+    --border-radius: 12px;
+    --transition-speed: 0.3s ease-in-out;
+    --gradient: linear-gradient(to right, #ec4899, #3b82f6);
+  }
+  
+
+  
+  .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+  }
+  .arrow1 {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+  }
+  .arrow1:hover {
+    transform: translateX(-5px); 
+  }
+  
+  .next-button:hover .arrow {
+    transform: translateX(5px); 
+  }
+  
+  
+  /* Add a glass-like effect on hover */
+  .form-group input:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 1.5rem;
+    }
+    
+    .address-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .address-grid .form-group:last-child {
+      grid-column: span 1;
+    }
+  }
+  
+  /* Give inputs a nice glow effect when focused */
+  .form-group input:focus {
+    box-shadow: 0 0 0 2px transparent, 0 0 15px rgba(59, 130, 246, 0.3);
+    border-image: var(--gradient);
+    border-image-slice: 1;
+  }
